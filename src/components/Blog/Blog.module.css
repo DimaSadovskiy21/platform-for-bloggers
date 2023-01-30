@@ -1,0 +1,34 @@
+.blog_wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    border-bottom: 1px solid  #DEDBDC;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.blog_photo {
+    width: 156px;
+    height: 156px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border: 1px solid #DEDBDC;
+    border-radius: 50%;
+}
+
+.blog_description {
+   
+}
+
+.blog_description__title {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+.blog_description__website {
+    color: #737067;
+    margin-bottom: 24px;
+}

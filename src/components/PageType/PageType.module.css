@@ -1,0 +1,38 @@
+.page_title {
+    width: 100%;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    border-bottom: 1px solid #DEDBDC; 
+    padding-bottom: 7px;
+  }
+  
+  .page_container {
+    padding-right: 64px;
+  }
+  
+  .page_filter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin: 24px 0;
+  }
+  
+  .blogs_input__search {
+    max-width: 672px;
+    width: 100%;
+    height: 36px;
+    outline: none;
+    background: url('./../../assets/images/search.svg') no-repeat 15px 9px;
+    border: 1px solid #DEDBDC;
+    border-radius: 2px;
+    padding: 6px 48px;
+  }
+  
+  .blogs_input__search::placeholder {
+    color: #B3B0B1;
+  }
+  
+  
