@@ -1,11 +1,4 @@
-.page_title {
-    width: 100%;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    border-bottom: 1px solid #DEDBDC; 
-    padding-bottom: 7px;
-  }
+
   
   .page_container {
     padding-right: 64px;
@@ -34,5 +27,15 @@
   .blogs_input__search::placeholder {
     color: #B3B0B1;
   }
+
+  .page_button {
+    display: flex;
+    justify-content: center;
+  }
   
-  
+  .posts_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 20px;
+    margin-bottom: 44px;
+}

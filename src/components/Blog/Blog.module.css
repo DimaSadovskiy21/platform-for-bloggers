@@ -7,6 +7,12 @@
     margin-bottom: 12px;
 }
 
+.blog_wrapper:last-child {
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 48px;
+}
+
 .blog_photo {
     width: 156px;
     height: 156px;
@@ -18,9 +24,6 @@
     border-radius: 50%;
 }
 
-.blog_description {
-   
-}
 
 .blog_description__title {
     font-weight: 600;

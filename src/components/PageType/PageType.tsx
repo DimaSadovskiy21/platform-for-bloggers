@@ -1,7 +1,11 @@
 import React from 'react';
 import { BlogType } from '../../models/Blog';
 import { ItemType } from '../../models/Item';
+import { PostType } from '../../models/Post';
 import { Blog } from '../Blog/Blog';
+import { Button } from '../Button/Button';
+import { PageTitle } from '../PageTitle/PageTitle';
+import { Post } from '../Post/Post';
 import { Select } from '../Select/Select';
 import s from './PageType.module.css';
 
@@ -11,7 +15,9 @@ type PageTypePropsType = {
   value: string;
   items: ItemType[];
   setValue: (value: string) => void;
-  elements: BlogType[];
+  blogs?: BlogType[];
+  posts?: PostType[];
+  error?: string;
 };
 
 export const PageType: React.FC<PageTypePropsType> = ({
@@ -20,20 +26,32 @@ export const PageType: React.FC<PageTypePropsType> = ({
   value,
   items,
   setValue,
-  elements,
+  blogs,
+  posts,
+  error,
 }) => {
+  const showBlogs = blogs && blogs.map((blog) => <Blog key={blog.id} {...blog} />);
+  const showPosts = posts && posts.map((post) => <Post key={post.id} {...post} />);
+
   return (
-    <div>
-      <h3 className={s.page_title}>{title}</h3>
-      <div className={s.page_container}>
-        <div className={s.page_filter}>
-          {type === 'blogs' && <input placeholder="Search" className={s.blogs_input__search} />}
-          <Select value={value} items={items} setValue={setValue} />
-        </div>
-        {elements.map((blog) => (
-          <Blog key={blog.id} {...blog}/>
-        ))}
-      </div>
-    </div>
+    <>
+      <PageTitle title={title} />
+      {error ? (
+        <div>{error}</div>
+      ) : (
+        <>
+          <div className={s.page_container}>
+            <div className={s.page_filter}>
+              {type === 'blogs' && <input placeholder="Search" className={s.blogs_input__search} />}
+              <Select value={value} items={items} setValue={setValue} />
+            </div>
+            {type === 'blogs' ? showBlogs : <div className={s.posts_wrapper}>{showPosts}</div>}
+          </div>
+          <div className={s.page_button}>
+            <Button />
+          </div>
+        </>
+      )}
+    </>
   );
 };

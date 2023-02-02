@@ -1,5 +1,5 @@
+import { blogsAPI } from './../../API/api';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import axios from 'axios';
 import { BlogType } from '../../models/Blog';
 
 type BlogStateType = {
@@ -21,7 +21,7 @@ const initialState: BlogStateType = {
 export const getBlogs = createAsyncThunk(
   'blogs/getBlogs',
   async (_, { rejectWithValue, dispatch }) => {
-      const res = await axios.get('https://bloggers-chi.vercel.app/blogs') ;
+      const res = await blogsAPI.getBlogs();
       dispatch(setBlogs(res.data.items));
   },
 );
