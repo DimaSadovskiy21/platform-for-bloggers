@@ -20,7 +20,6 @@
 .post_description {
     display: flex;
     gap: 12px;
-    
 }
 
 .post_smallImg {
@@ -50,6 +49,13 @@
 .post_description__date {
     letter-spacing: 0.02em;
     color: #636262;
+    font-size: 12px;
+    line-height: 16px;
 }
 
-
+.post_description__shortDescription {
+    max-width: 299px;
+    width: 100%;
+    font-size: 16px;
+    margin: 12px 0 6px;
+}

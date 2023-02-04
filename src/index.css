@@ -7,8 +7,6 @@ h1, h3, h4, p {
 }
 
 
-
-
 body {
   margin: 0 auto;
   font-family: 'Josefin Sans', sans-serif;
@@ -19,13 +17,13 @@ body {
   color: #1A1718;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+  background-color: black; 
 }
 
 .container {
   margin: 0 auto;
   max-width: 1280px;
-}
+  }
 
 .wrapper {
   display: flex;

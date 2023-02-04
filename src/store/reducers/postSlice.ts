@@ -12,7 +12,7 @@ type PostStateType = {
   post: PostType;
 };
 
-type FetchError = {
+export type FetchError = {
   message: string;
 };
 
@@ -23,7 +23,7 @@ const initialState: PostStateType = {
   post: {} as PostType,
 };
 
-export const getPosts = createAsyncThunk('blogs/getPosts', async (_, { rejectWithValue }) => {
+export const getPosts = createAsyncThunk<PostType[], undefined, { rejectValue: FetchError }>('blogs/getPosts', async (_, { rejectWithValue }) => {
   try {
     const res = await postsAPI.getPosts();
     return res.data.items;

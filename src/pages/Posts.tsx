@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { PageType } from '../components/PageType/PageType';
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import { ItemType } from '../models/Item';
@@ -13,13 +13,13 @@ export const Posts = () => {
   ];
   let [value, setValue] = useState('1');
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     dispatch(getPosts());
   }, [dispatch]);
 
   
 if(loading) {
-  return <div>Загрузка...</div>
+  return <div style={{height: '100vh'}}>Загрузка...</div>
 }
 
 

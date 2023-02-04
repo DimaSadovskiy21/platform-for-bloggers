@@ -31,7 +31,7 @@ export const PageType: React.FC<PageTypePropsType> = ({
   error,
 }) => {
   const showBlogs = blogs && blogs.map((blog) => <Blog key={blog.id} {...blog} />);
-  const showPosts = posts && posts.map((post) => <Post key={post.id} {...post} />);
+  const showPosts = posts && posts.map((post) => <Post key={post.id} postId={post.id} {...post} />);
 
   return (
     <>

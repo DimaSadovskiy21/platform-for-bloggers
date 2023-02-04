@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { PageType } from '../components/PageType/PageType';
 
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
@@ -6,10 +6,10 @@ import { ItemType } from '../models/Item';
 import { getBlogs } from '../store/reducers/blogSlice';
 
 export const Blogs = () => {
-  const { blogs } = useAppSelector((state) => state.blogReducer);
+  const { blogs, loading, error } = useAppSelector((state) => state.blogReducer);
   const dispatch = useAppDispatch();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     dispatch(getBlogs());
   }, [dispatch]);
 
@@ -20,5 +20,10 @@ export const Blogs = () => {
     { value: '4', title: 'From Z to A' },
   ];
   let [value, setValue] = useState('1');
-  return <PageType type={'blogs'} title={'Blogs'} value={value} setValue={setValue} items={items} blogs={blogs}/>
+
+  if(loading) {
+    return <div style={{height: '100vh'}}>Загрузка...</div>
+  }
+
+  return <PageType type={'blogs'} title={'Blogs'} value={value} setValue={setValue} items={items} blogs={blogs} error={error}/>
 };
