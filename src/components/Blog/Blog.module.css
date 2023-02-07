@@ -5,8 +5,7 @@
     border-bottom: 1px solid  #DEDBDC;
     padding-bottom: 12px;
     margin-bottom: 12px;
-    text-decoration: none;
-    color: inherit;
+    
 }
 
 .blog_wrapper:last-child {
@@ -24,6 +23,7 @@
     background: #FFFFFF;
     border: 1px solid #DEDBDC;
     border-radius: 50%;
+    
 }
 
 .blog_photo_page {
@@ -32,6 +32,10 @@
     border: 5px solid #DEDBDC;
 }
 
+.blog_description__titleLink {
+    text-decoration: none;
+    color: inherit;
+}
 
 .blog_description__title {
     font-weight: 600;
